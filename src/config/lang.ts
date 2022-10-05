@@ -9,10 +9,46 @@ export const richLanguageConfiguration: IRichLanguageConfiguration = {
 };
 
 export const monarchLanguage = <ILanguage>{
+  keywords: [
+    'let',
+    'if',
+    'else',
+    'while',
+    'for',
+    'break',
+    'continue',
+    'return',
+    'struct',
+    'fn',
+  ],
+  typeKeywords: [
+    'i8',
+    'i16',
+    'i32',
+    'i64',
+    'i128',
+    'u8',
+    'u16',
+    'u32',
+    'u64',
+    'u128',
+    'f32',
+    'f64',
+    'bool',
+    'void',
+  ],
   tokenizer: {
     root: [
-      [/\d+/, { token: 'keyword' }],
-      [/[a-z]+/, { token: 'string' }],
+      [
+        /[a-z_$][\w$]*/,
+        {
+          cases: {
+            '@typeKeywords': 'keyword',
+            '@keywords': 'keyword',
+            '@default': 'identifier',
+          },
+        },
+      ],
     ],
   },
 };

@@ -3,7 +3,7 @@ import MonacoEditor, { monaco } from 'react-monaco-editor';
 import { EditorProps, EditorExposeType } from './type';
 // eslint-disable-next-line react/display-name
 const Editor = forwardRef<EditorExposeType, EditorProps>((props, ref) => {
-  const { width = '100%', height = '600px', language } = props;
+  const { width = '100%', height = '600px', language, value = '' } = props;
   const EditorRef = useRef<monaco.editor.IStandaloneCodeEditor>();
   const editorDidMount = (
     editor: monaco.editor.IStandaloneCodeEditor,
@@ -31,7 +31,7 @@ const Editor = forwardRef<EditorExposeType, EditorProps>((props, ref) => {
   const options = {
     selectOnLineNumbers: true,
   };
-  const code = 'console.log(1)';
+
   useImperativeHandle(ref, () => ({
     getSelectionVal,
   }));
@@ -41,7 +41,7 @@ const Editor = forwardRef<EditorExposeType, EditorProps>((props, ref) => {
       height={height}
       language={language}
       theme="vs-dark"
-      value={code}
+      value={value}
       options={options}
       onChange={onChange}
       editorDidMount={editorDidMount}
