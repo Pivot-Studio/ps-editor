@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import './app.scss';
 import Editor from './components/Editor';
 import { EditorExposeType } from './components/Editor/type';
 function App() {
@@ -54,13 +55,17 @@ fn printi64ln(i: i64) void
   return (
     <>
       <Editor ref={EditorRef} {...editorOption} />
-      <button
+      <div className="footer">
+        <div className="lisense">蜀ICP备2020029188号-2</div>
+        <div className="company">绵阳枢辰有限公司</div>
+      </div>
+      {/* <button
         onClick={() => {
           console.log(EditorRef.current?.getSelectionVal());
         }}
       >
         获取选中值
-      </button>
+      </button> */}
     </>
   );
 }

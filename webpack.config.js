@@ -54,13 +54,7 @@ module.exports = {
         use: [
           //loader 顺序是自下而上执行，所以顺序一定不要错
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              namedExport: true,
-            },
-          }, //如果需要使用css module模式的话，在这个loader里面添加配置即可，自己百度下
+          'css-loader', //如果需要使用css module模式的话，在这个loader里面添加配置即可，自己百度下
           'sass-loader',
         ],
       },
