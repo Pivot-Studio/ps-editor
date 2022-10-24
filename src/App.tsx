@@ -56,8 +56,10 @@ fn printi64ln(i: i64) void
     <>
       <Editor ref={EditorRef} {...editorOption} />
       <div className="footer">
-        <div className="lisense">蜀ICP备2020029188号-2</div>
-        <div className="company">绵阳枢辰有限公司</div>
+        <div className="company">@2022 绵阳枢辰有限公司 ｜</div>
+        <div className="lisense">
+          <a href="https://beian.miit.gov.cn/">蜀ICP备2020029188号-2</a>{' '}
+        </div>
       </div>
       {/* <button
         onClick={() => {
